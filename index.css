@@ -1,0 +1,69 @@
+:root {
+    --green-color: 77, 201, 0;
+    --black-color: 0, 0, 0;
+    --white-color: 255, 255, 255;
+    --home-color: 235, 235, 235;
+    --blackshade-color: 51, 51, 51;
+}
+body {
+    color: rgb(var(--black-color));
+    font-family: "Poppins", sans-serif;
+}
+
+* {
+    margin: 0;
+    letter-spacing: 1px;
+    line-height: 125%;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+  
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.btn {
+    height: 30px;
+    padding: 0 1rem;
+    background-color: transparent;
+    border: 2px solid rgb(var(--green-color));
+    border-radius: 5px;
+    color: rgb(var(--green-color)) !important;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+.btn:disabled {
+    background-color: gray !important;
+}
+.btn:hover {
+    background-color: rgb(var(--green-color));
+    color: rgb(var(--white-color)) !important;
+    fill: rgb(var(--white-color)) !important;
+}
+.green-only{
+    color: rgb(var(--green-color));
+}
+.why-heading{
+    color: rgb(var(--blackshade-color));
+}
+
+::-webkit-scrollbar {
+    height: 10px;
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgb(var(--green-color));
+}
