@@ -1,0 +1,70 @@
+#footer {
+    background-color: rgb(var(--home-color));
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1rem;
+    color: rgb(var(--blackshade-color));
+    font-size: 1rem;
+    margin-top: 4rem;
+  }
+    
+  .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .footer-content-connect {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-content-connect-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .footer-content-connect-links > li {
+    padding: 1rem 1rem;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out !important;
+  }
+  .footer-content-made-with {
+    text-align: center;
+    font-weight: 600;
+  }
+  .footer-content-connect-links > a {
+    padding: 0.5rem 0;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+  }
+  .footer-content > * {
+    margin: 2rem auto;
+  }
+  .footer-content-connect-heading {
+    font-weight: bold;
+  }
+  .footer-content-connect-links > li:hover {
+    color: rgb(var(--green-color));
+  }
+  .footer-content-copyright {
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: 600;
+  }
+  .footer-content-divider {
+    background-color: rgb(var(--blackshade-color)) !important;
+  }
+  #footer-heart-img{
+    animation: heart-rotate 1s both infinite;
+  }
+  @keyframes heart-rotate {
+    from {
+      transform: rotateY(0);
+    }
+  
+    to {
+      transform: rotateY(180deg);
+    }
+  }

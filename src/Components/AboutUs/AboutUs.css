@@ -1,0 +1,11 @@
+#aboutus{
+    margin-top: 6rem;
+}
+
+
+.aboutus-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 2rem;
+}

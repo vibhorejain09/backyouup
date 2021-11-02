@@ -1,0 +1,54 @@
+#header {
+    display: flex;
+    background-color: rgb(var(--home-color));
+    z-index: 10;
+    box-shadow: 0 0 10px 0 rgb(var(--blackshade-color));
+    position: fixed;
+    width: 100%;
+  }
+  .header-logo-byu{
+      margin-left: 2rem;
+  }
+  .header-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(var(--blackshade-color));
+  }
+  .header-items > li {
+    padding: 1rem 0.7rem;
+    transition: all 0.3s ease-in;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  .header-items > li:hover {
+    color: rgb(var(--white-color));
+    background-color: rgb(var(--green-color), 0.8);
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .MuiDrawer-paper{  
+    justify-content: center;
+    background-color: rgb(var(--home-color)) !important;
+    color: rgb(var(--blackshade-color)) !important;
+  }
+  .login-btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+  }
+
+  @media only screen and (max-width: 800px) {
+    .login-btn-container{
+        padding-left: 0;
+    }
+    .header-logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  }
