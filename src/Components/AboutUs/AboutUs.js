@@ -13,7 +13,7 @@ function AboutUs() {
                         Buccaneer gangway jack rum loot spyglass line Jack Tar fore gaff. Gaff topmast scuttle ballast swab
                         draught measured fer yer chains dance the hempen jig Chain Shot yardarm. Man braid celiac synth freegan
                         readymade, pitchfork fam salvia waistcoat lomo bitters gentrify four loko. Pitchfork semiotics
-                        post-ironic vegan. Tofu meditation microdosing hashtag semiotics venmo. Flexitarian vape tilde taiyaki.
+                        post-ironic vegan. microdosing hashtag semiotics venmo. Flexitarian vape tilde taiyaki.
                         Prism poutine farm-to-table, messenger bag vegan taxidermy tattooed sartorial squid jean shorts fixie
                         selvage trust fund vape.
                     </p>
