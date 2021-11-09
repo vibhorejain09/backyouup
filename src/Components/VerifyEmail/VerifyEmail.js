@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import "./VerifyEmail.css"
 import { Alert, Box, Button, Typography } from "@mui/material"
 import { useAuth } from "../../Contexts/AuthContext"
 import { sendEmailVerification } from "firebase/auth"
@@ -25,15 +26,17 @@ function VerifyEmail() {
       })
   }
   return (
+    <div id="verify-email"> 
     <Box sx={{ pt: 12, display: "flex", justifyContent: "center", minHeight:"100vh" }}>
       <Box sx={{ maxWidth: "800px" }}>
         {message && <Alert severity={severity}>{message}</Alert>}
-        <Typography component="h2" variant="h5" sx={{ textAlign: "center", color: "rgb(var(--green--color))" }}>Please verify your account to continue</Typography>
-        <Button variant="contained" disabled={loading} onClick={handleSubmit}>
+        <Typography component="h2" variant="h5" sx={{ textAlign: "center" }} style={{color: "rgb(var(--green-color))", fontWeight: "bold"}}>Please verify your account to continue</Typography>
+        <Button variant="contained" fullWidth disabled={loading} onClick={handleSubmit} sx={{ mt: 2, mb: 2 }} style={{backgroundColor: "rgb(var(--green-color))"}}>
            Send Email
         </Button>
       </Box>
     </Box>
+    </div>
   )
 }
 

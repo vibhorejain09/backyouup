@@ -66,14 +66,14 @@ function Signup() {
                 <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", mb: 2 }}>
                     <Login />
                 </Box>
-                <Typography component="h2" variant="h5" sx={{ textAlign: "center" }}>
-                    Sign Up
+                <Typography component="h2" variant="h5" sx={{ textAlign: "center" }} style={{color: "rgb(var(--green-color))", fontWeight: "bold"}}>
+                    Register/Sign Up
                 </Typography>
                 {message ? <Alert severity={severity}>{message}</Alert> :""}
                 <Box component="form" ref={formRef} noValidate sx={{ mt: 4 }} onSubmit={handleSubmit}>
                     <Grid container spacing={2}>
                         <Grid item xs={12} >
-                            <TextField onChange={e => setName(e.target.value)} required fullWidth id="name" label="Full Name" name="name" autoComplete="name" value={name} />
+                            <TextField  onChange={e => setName(e.target.value)} required fullWidth id="name" label="Full Name" name="name" autoComplete="name" value={name} />
                         </Grid>
                         <Grid item xs={12} >
                             <TextField onChange={e => setEmail(e.target.value)} required fullWidth id="email" label="Email Address" name="email" autoComplete="email" value={email} />
@@ -108,12 +108,12 @@ function Signup() {
                             </FormControl>
                         </Grid>
                     </Grid>
-                    <Button type="submit" fullWidth variant="contained" disabled={loading} sx={{ mt: 2, mb: 2 }}>
-                        Sign Up
+                    <Button type="submit" fullWidth variant="contained" disabled={loading} sx={{ mt: 2, mb: 2 }} style={{backgroundColor: "rgb(var(--green-color))"}}>
+                    {loading ? "Signing up.." : "Sign Up"}
                     </Button>
                     <Grid container justifyContent="center">
                         <Grid item>
-                            <Link href="/login">
+                            <Link href="/login" underline="none">
                                 Already have an account? Sign In.
                             </Link>
                         </Grid>

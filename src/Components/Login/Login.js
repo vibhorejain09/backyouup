@@ -51,7 +51,7 @@ function Login() {
                 <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", mb: 2}}>
                     <LoginIcon />
                 </Box>
-                <Typography component="h2" variant="h5" sx={{textAlign: "center"}}>
+                <Typography component="h2" variant="h5" sx={{textAlign: "center"}} style={{color: "rgb(var(--green-color))", fontWeight: "bold"}}>
                     Sign in
                 </Typography>
             {
@@ -68,17 +68,17 @@ function Login() {
                         </Grid>
                         
                     </Grid>
-                    <Button type="submit" disabled={loading} fullWidth variant="contained" sx={{mt: 2, mb: 2}}>
-                        Sign in
+                    <Button type="submit" disabled={loading} fullWidth variant="contained" sx={{mt: 2, mb: 2}} style={{backgroundColor: "rgb(var(--green-color))"}}>
+                    {loading ? "Signing In.." : "Sign In"}
                     </Button>
                     <Grid container justifyContent = "center">
                         <Grid item sx={{mb:2}}>
-                            <Link href="forgotpassword">
+                            <Link href="forgotpassword" underline="none">
                                 Forgot Password ?
                             </Link>
                         </Grid>
                         <Grid item>
-                            <Link href="/signup">
+                            <Link href="/signup" underline="none">
                                 Don't have an account? Sign Up.
                             </Link>
                         </Grid>  

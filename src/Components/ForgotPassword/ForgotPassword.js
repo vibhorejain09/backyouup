@@ -45,7 +45,7 @@ function ForgotPassword() {
                     <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", mb: 2 }}>
                         <LoginIcon />
                     </Box>
-                    <Typography component="h2" variant="h5" sx={{ textAlign: "center" }}>
+                    <Typography component="h2" variant="h5" sx={{ textAlign: "center" }} style={{color: "rgb(var(--green-color))", fontWeight: "bold"}}>
                         Forgot Password
                     </Typography>
                     {message ? <Alert severity={severity}>{message}</Alert> : ""}
@@ -57,13 +57,13 @@ function ForgotPassword() {
                             </Grid>
 
                         </Grid>
-                        <Button type="submit" fullWidth disabled={loading} variant="contained" sx={{ mt: 2, mb: 2 }}>
-                            Send Link
+                        <Button type="submit" fullWidth disabled={loading} variant="contained" sx={{ mt: 2, mb: 1 }} style={{backgroundColor: "rgb(var(--green-color))"}}>
+                            {loading ? "Sending Link.." : "Send Link"}
                         </Button>
                         <Grid container justifyContent="center">
-                            <Grid item sx={{ mb: 2 }}>
-                                <Link href="/login">
-                                    <Button fullWidth variant="contained" sx={{ mt: 2, mb: 2 }}>
+                            <Grid item sx={{  width: "100%" }}>
+                                <Link href="/login" underline="none">
+                                    <Button fullWidth variant="contained" sx={{ mt: 2, mb: 2 }} style={{backgroundColor: "rgb(var(--green-color))"}}>
                                         Sign In
                                     </Button>
                                 </Link>

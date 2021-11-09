@@ -8,7 +8,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import { People, Info, LiveHelp, Home, Menu, Login, Logout } from "@mui/icons-material";
+import { People, Info, LiveHelp, Home, Menu, Login, Logout, Dashboard as DashboardIcon, ContactMail, AccountCircle } from "@mui/icons-material";
 import scrollToElement from "../../Utils/scrollToElement";
 import { useAuth } from '../../Contexts/AuthContext';
 import { Link } from "@mui/material"
@@ -104,7 +104,7 @@ function Header() {
                                             <Link href="/" underline="none" color="rgb(var(--blackshade-color)" >
                                                 <ListItem className="sidebar-link" button component="a" href="#dashboard" key={"Dashboard"}>
                                                     <ListItemIcon>
-                                                        <People />
+                                                        <DashboardIcon />
                                                     </ListItemIcon>
 
                                                     <ListItemText primary={"Dashboard"} />
@@ -112,13 +112,13 @@ function Header() {
                                             </Link>
                                             <ListItem className="sidebar-link" button component="a" href="#conatctus" key={"ContactUs"}>
                                                 <ListItemIcon>
-                                                    <People />
+                                                    <ContactMail />
                                                 </ListItemIcon>
                                                 <ListItemText primary={"Contact Us"} />
                                             </ListItem>
                                             <ListItem className="sidebar-link" button component="a" href="#profile" key={"profile"}>
                                                 <ListItemIcon>
-                                                    <People />
+                                                    <AccountCircle />
                                                 </ListItemIcon>
                                                 <span style={{ backgroundColor: "rgb(var(--green-color))", borderRadius: "10px", color: "rgb(var(--home-color))", padding: "0.5rem 0.5rem" }}>{currentUser.displayName[0]}</span>                
                                             </ListItem>
