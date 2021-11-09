@@ -3,7 +3,7 @@ import { ChevronRight, ChevronLeft, FormatQuote } from "@mui/icons-material";
 import data from "./data";
 import './Team.css';
 function Team() {
-    const [people, setPeople] = useState(data);
+    const [people] = useState(data);
     const [index, setIndex] = useState(0);
 
     useEffect(() => {

@@ -4,8 +4,11 @@ import useWindowWidth from "../../Utils/windowWidth"
 import homecoverlogo from '../../Assets/backyouupfull.svg'
 import heroimg from '../../Assets/hero.png'
 import { Instagram, LinkedIn, Mail } from '@material-ui/icons'
+import { Link } from "@mui/material"
+import { useAuth } from '../../Contexts/AuthContext';
 function Home() {
     const width = useWindowWidth();
+    const { currentUser } = useAuth();
     return (
         <div id="home" style={{ justifyContent: width > 800 ? "space-evenly" : "center" }}>
             <div className="home-container">
@@ -32,18 +35,25 @@ function Home() {
                         </li>
                     </ul>
                 </div>
+                {
+                    !currentUser ?
+                    <>
                 <div className="register-btn-container">
                     <div className="btn">
-                        Register/Signup
+                        <Link href="/signup" underline="none" color="rgb(var(--green-color)">
+                            Register/Sign up
+                        </Link>
                     </div>
                 </div>
+                </> : " "
+                }
             </div>
             {
                 width > 800 ?
                     <div className="home-hero-img-conatiner">
                         <img src={heroimg} height="300px" alt="herohomeimg" className="home-hero-img" />
                     </div>
-                : " "
+                    : " "
             }
 
         </div>

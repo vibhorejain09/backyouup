@@ -8,13 +8,16 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import { People, Info, LiveHelp, Home, Menu, Login } from "@mui/icons-material";
+import { People, Info, LiveHelp, Home, Menu, Login, Logout } from "@mui/icons-material";
 import scrollToElement from "../../Utils/scrollToElement";
-
+import { useAuth } from '../../Contexts/AuthContext';
+import { Link } from "@mui/material"
 function Header() {
     const width = useWindowWidth();
     const [open, setOpen] = useState(false);
-    const toggleDrawer =  (event) => {
+    const { currentUser, logout } = useAuth();
+    console.log(currentUser);
+    const toggleDrawer = (event) => {
         if (
             event.type === "keydown" &&
             (event.key === "Tab" || event.key === "Shift")
@@ -23,6 +26,15 @@ function Header() {
         }
         setOpen(!open);
     };
+    const handleLogout = async () => {
+        try {
+
+            await logout()
+        }
+        catch {
+            alert("Failed to logout")
+        }
+    }
     return (
         <div id="header" style={{
             justifyContent: width > 800 ? "space-around" : "space-between",
@@ -45,54 +57,127 @@ function Header() {
                                 <img src={headerlogo} height="50px" alt="backyouup" className="header-logo-byu" />
                             </div>
                             <List>
+
                                 <ListItem className="sidebar-link " button component="a" href="#home" key={"Home"}>
                                     <ListItemIcon>
                                         <Home />
                                     </ListItemIcon>
-                                    <ListItemText primary={"Home"} />
+                                    <Link href="/" underline="none" color="rgb(var(--blackshade-color)" >
+                                        <ListItemText primary={"Home"} />
+                                    </Link>
                                 </ListItem>
+
+
                                 <ListItem className="sidebar-link" button component="a" href="#aboutus" key={"About Us"}>
                                     <ListItemIcon>
                                         <Info />
                                     </ListItemIcon>
-                                    <ListItemText primary={"About us"} />
+                                    <Link href="/" underline="none" color="rgb(var(--blackshade-color)" >
+                                        <ListItemText primary={"About us"} />
+                                    </Link>
                                 </ListItem>
+
+
                                 <ListItem className="sidebar-link" button component="a" href="#faqs" key={"FAQs"}>
                                     <ListItemIcon>
                                         <LiveHelp />
                                     </ListItemIcon>
-                                    <ListItemText primary={"FAQs"} />
+                                    <Link href="/" underline="none" color="rgb(var(--blackshade-color)" >
+                                        <ListItemText primary={"FAQs"} />
+                                    </Link>
                                 </ListItem>
+
+
                                 <ListItem className="sidebar-link" button component="a" href="#team" key={"Team"}>
                                     <ListItemIcon>
                                         <People />
                                     </ListItemIcon>
-                                    <ListItemText primary={"Team"} />
+                                    <Link href="/" underline="none" color="rgb(var(--blackshade-color)" >
+                                        <ListItemText primary={"Team"} />
+                                    </Link>
                                 </ListItem>
-                                <ListItem className="sidebar-link" button component="a" >
-                                    <ListItemIcon>
-                                        <Login />
-                                    </ListItemIcon>
-                                    <div className="login-btn-container">
-                                        <div className="btn">
-                                            Login
-                                        </div>
-                                    </div>
-                                </ListItem>
+
+                                {
+                                    currentUser ?
+
+                                        <>
+                                            <Link href="/" underline="none" color="rgb(var(--blackshade-color)" >
+                                                <ListItem className="sidebar-link" button component="a" href="#dashboard" key={"Dashboard"}>
+                                                    <ListItemIcon>
+                                                        <People />
+                                                    </ListItemIcon>
+
+                                                    <ListItemText primary={"Dashboard"} />
+                                                </ListItem>
+                                            </Link>
+                                            <ListItem className="sidebar-link" button component="a" href="#conatctus" key={"ContactUs"}>
+                                                <ListItemIcon>
+                                                    <People />
+                                                </ListItemIcon>
+                                                <ListItemText primary={"Contact Us"} />
+                                            </ListItem>
+                                            <ListItem className="sidebar-link" button component="a" href="#profile" key={"profile"}>
+                                                <ListItemIcon>
+                                                    <People />
+                                                </ListItemIcon>
+                                                <span style={{ backgroundColor: "rgb(var(--green-color))", borderRadius: "10px", color: "rgb(var(--home-color))", padding: "0.5rem 0.5rem" }}>{currentUser.displayName[0]}</span>                
+                                            </ListItem>
+                                        </> : " "
+                                }
+                                {
+                                    currentUser ?
+                                        <ListItem className="sidebar-link" button onClick={handleLogout} component="a" >
+                                            <ListItemIcon>
+                                                <Logout />
+                                            </ListItemIcon>
+                                            <div className="login-btn-container">
+                                                <div className="btn">
+
+                                                    Logout
+
+                                                </div>
+                                            </div>
+                                        </ListItem> :
+                                        <ListItem className="sidebar-link" button component="a" >
+                                            <ListItemIcon>
+                                                <Login />
+                                            </ListItemIcon>
+                                            <div className="login-btn-container">
+                                                <div className="btn">
+                                                    <Link href="/login" underline="none" color="rgb(var(--green-color)">
+                                                        Login
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </ListItem>
+                                }
                             </List>
                         </div>
                     </Drawer>
                 </React.Fragment>
             ) : (
                 <ul className="header-items">
-                    <li onClick={() => scrollToElement("home")}>Home </li>
-                    <li onClick={() => scrollToElement("aboutus")}>About Us</li>
-                    <li onClick={() => scrollToElement("faqs")}>FAQs</li>
-                    <li onClick={() => scrollToElement("team")}>Team</li>
+                    <li onClick={() => scrollToElement("home")}><Link href="/" underline="none" color="rgb(var(--blackshade-color)" >Home</Link> </li>
+                    <li onClick={() => scrollToElement("aboutus")}><Link href="/" underline="none" color="rgb(var(--blackshade-color)" >About Us</Link></li>
+                    <li onClick={() => scrollToElement("faqs")}><Link href="/" underline="none" color="rgb(var(--blackshade-color)" >FAQs</Link></li>
+                    <li onClick={() => scrollToElement("team")}><Link href="/" underline="none" color="rgb(var(--blackshade-color)" >Team</Link></li>
+                    {
+                        currentUser ?
+
+                            <>
+                                <li >Dashboard</li>
+                                <li >Contact Us</li>
+                                <span style={{ backgroundColor: "rgb(var(--green-color))", borderRadius: "10px", color: "rgb(var(--home-color))", padding: "0.5rem 0.5rem" }}>{currentUser.displayName ? currentUser.displayName[0] : "B"}</span>
+                            </> : " "
+                    }
                     <span>
                         <div className="login-btn-container">
                             <div className="btn">
-                                Login
+                                {currentUser ? <span onClick={handleLogout}>Logout</span> :
+                                    <Link href="/login" underline="none" color="rgb(var(--green-color)">
+                                        Login
+                                    </Link>
+                                }
                             </div>
                         </div>
                     </span>
