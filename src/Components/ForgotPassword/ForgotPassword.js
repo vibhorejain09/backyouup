@@ -46,7 +46,7 @@ function ForgotPassword() {
                         <LoginIcon />
                     </Box>
                     <Typography component="h2" variant="h5" sx={{ textAlign: "center" }} style={{color: "rgb(var(--green-color))", fontWeight: "bold"}}>
-                        Forgot Password
+                        Reset Password
                     </Typography>
                     {message ? <Alert severity={severity}>{message}</Alert> : ""}
                     <Box component="form" ref={formRef} onSubmit={handleSubmit} noValidate sx={{ mt: 4 }}>
