@@ -157,10 +157,10 @@ function Header() {
                 </React.Fragment>
             ) : (
                 <ul className="header-items">
-                    <li onClick={() => scrollToElement("home")}><Link href="/" underline="none" color="rgb(var(--blackshade-color)" >Home</Link> </li>
-                    <li onClick={() => scrollToElement("aboutus")}><Link href="/" underline="none" color="rgb(var(--blackshade-color)" >About Us</Link></li>
-                    <li onClick={() => scrollToElement("faqs")}><Link href="/" underline="none" color="rgb(var(--blackshade-color)" >FAQs</Link></li>
-                    <li onClick={() => scrollToElement("team")}><Link href="/" underline="none" color="rgb(var(--blackshade-color)" >Team</Link></li>
+                    <li onClick={() => scrollToElement("home")}><Link  underline="none" color="rgb(var(--blackshade-color)" >Home</Link> </li>
+                    <li onClick={() => scrollToElement("aboutus")}><Link  underline="none" color="rgb(var(--blackshade-color)" >About Us</Link></li>
+                    <li onClick={() => scrollToElement("faqs")}><Link  underline="none" color="rgb(var(--blackshade-color)" >FAQs</Link></li>
+                    <li onClick={() => scrollToElement("team")}><Link  underline="none" color="rgb(var(--blackshade-color)" >Team</Link></li>
                     {
                         currentUser ?
 
