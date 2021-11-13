@@ -12,10 +12,12 @@ import { People, Info, LiveHelp, Home, Menu, Login, Logout, Dashboard as Dashboa
 import scrollToElement from "../../Utils/scrollToElement";
 import { useAuth } from '../../Contexts/AuthContext';
 import { Link } from "@mui/material"
+import {useNavigate} from 'react-router-dom'
 function Header() {
     const width = useWindowWidth();
     const [open, setOpen] = useState(false);
     const { currentUser, logout } = useAuth();
+    const navigate = useNavigate();
     console.log(currentUser);
     const toggleDrawer = (event) => {
         if (
@@ -114,13 +116,15 @@ function Header() {
                                                 <ListItemIcon>
                                                     <ContactMail />
                                                 </ListItemIcon>
-                                                <ListItemText primary={"Contact Us"} />
+                                                <Link href="/contactus" underline="none" color="rgb(var(--blackshade-color)" >
+                                                    <ListItemText primary={"Contact Us"} />
+                                                </Link>
                                             </ListItem>
                                             <ListItem className="sidebar-link" button component="a" href="#profile" key={"profile"}>
                                                 <ListItemIcon>
                                                     <AccountCircle />
                                                 </ListItemIcon>
-                                                <span style={{ backgroundColor: "rgb(var(--green-color))", borderRadius: "10px", color: "rgb(var(--home-color))", padding: "0.5rem 0.5rem" }}>{currentUser.displayName[0]}</span>                
+                                                <span style={{ backgroundColor: "rgb(var(--green-color))", borderRadius: "10px", color: "rgb(var(--home-color))", padding: "0.5rem 0.5rem" }}>{currentUser.displayName[0]}</span>
                                             </ListItem>
                                         </> : " "
                                 }
@@ -157,16 +161,17 @@ function Header() {
                 </React.Fragment>
             ) : (
                 <ul className="header-items">
-                    <li onClick={() => scrollToElement("home")}><Link  underline="none" color="rgb(var(--blackshade-color)" >Home</Link> </li>
-                    <li onClick={() => scrollToElement("aboutus")}><Link  underline="none" color="rgb(var(--blackshade-color)" >About Us</Link></li>
-                    <li onClick={() => scrollToElement("faqs")}><Link  underline="none" color="rgb(var(--blackshade-color)" >FAQs</Link></li>
-                    <li onClick={() => scrollToElement("team")}><Link  underline="none" color="rgb(var(--blackshade-color)" >Team</Link></li>
+                    <li onClick={() => {navigate("/"); scrollToElement("home")}}>Home </li>
+                    <li onClick={() => {navigate("/"); scrollToElement("aboutus")}}> About Us</li>
+                    <li onClick={() => {navigate("/"); scrollToElement("faqs")}}>FAQs</li>
+                    <li onClick={() => {navigate("/"); scrollToElement("team")}}>Team</li>
                     {
                         currentUser ?
 
                             <>
                                 <li >Dashboard</li>
-                                <li >Contact Us</li>
+                                <li ><Link href="/contactus" underline="none" color="rgb(var(--green-color)">Contact Us</Link></li>
+
                                 <span style={{ backgroundColor: "rgb(var(--green-color))", borderRadius: "10px", color: "rgb(var(--home-color))", padding: "0.5rem 0.5rem" }}>{currentUser.displayName ? currentUser.displayName[0] : "B"}</span>
                             </> : " "
                     }

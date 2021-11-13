@@ -1,6 +1,7 @@
 import React,  {createContext, useContext, useState, useEffect} from "react"
 import {getAuth} from "firebase/auth"
-import app from "../Utils/firebase"
+import app, {db} from "../Utils/firebase"
+import {setDoc, doc} from "@firebase/firestore"
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, updateProfile,sendPasswordResetEmail, onAuthStateChanged } from "@firebase/auth"
 export const auth = getAuth(app)
 const AuthContext = createContext();
@@ -21,6 +22,7 @@ export function AuthProvider({children}){
                 if(user)
                 {
                     await updateProfile(user, {displayName: name} )
+                    await setDoc(doc(db, "userData", user.uid), {phone: phone, address: address, gender: gender})
                     console.log(user)
                 }
             }

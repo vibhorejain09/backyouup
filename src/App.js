@@ -10,6 +10,7 @@ import Signup from './Components/Signup/Signup';
 import Login from './Components/Login/Login';
 import ForgotPassword from './Components/ForgotPassword/ForgotPassword';
 import VerifyEmail from './Components/VerifyEmail/VerifyEmail';
+import ContactUs from './Components/ContactUs/ContactUs';
 import { AuthProvider } from "./Contexts/AuthContext"
 import VerifiedRoute from "./Utils/VerifiedRoute"
 import FreeRoute from "./Utils/FreeRoute"
@@ -40,6 +41,7 @@ function App() {
             <Route path="/signup" element={<FreeRoute><Signup/></FreeRoute>} />
             <Route path="/login" element={<FreeRoute><Login/></FreeRoute>} />
             <Route path="/forgotpassword" element={<FreeRoute><ForgotPassword/></FreeRoute>} />
+            <Route path="/contactus" element={<FreeRoute><ContactUs/></FreeRoute>} />
             <Route path="/verifyemail" element={<VerifiedRoute><VerifyEmail/></VerifiedRoute>} />
           </Routes>
           <Footer />

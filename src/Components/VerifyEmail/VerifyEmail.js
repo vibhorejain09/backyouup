@@ -15,14 +15,17 @@ function VerifyEmail() {
     setSeverity("")
     await sendEmailVerification(currentUser)
       .then(() => {
-        setMessage("Verification Email Sent!!")
         setSeverity("success")
+        setMessage("Verification Email Sent!!")
+        
         setLoading(false)
       })
-      .catch(() => {
-        setMessage("Something went wrong. Please try again..")
+      .catch((error) => {
         setSeverity("error")
+        setMessage("Something went wrong. Please try again..")
+        
         setLoading(false)
+        console.log(error)
       })
   }
   return (
