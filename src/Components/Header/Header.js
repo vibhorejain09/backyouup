@@ -124,7 +124,7 @@ function Header() {
                                                 <ListItemIcon>
                                                     <AccountCircle />
                                                 </ListItemIcon>
-                                                <span style={{ backgroundColor: "rgb(var(--green-color))", borderRadius: "10px", color: "rgb(var(--home-color))", padding: "0.5rem 0.5rem" }}>{currentUser.displayName[0]}</span>
+                                                <span style={{ backgroundColor: "rgb(var(--green-color))", borderRadius: "10px", color: "rgb(var(--home-color))", padding: "0.5rem 0.5rem" }}><Link href="/profile" underline="none" color="rgb(var(--green-color)">{currentUser.displayName[0]}</Link></span>
                                             </ListItem>
                                         </> : " "
                                 }
@@ -136,9 +136,9 @@ function Header() {
                                             </ListItemIcon>
                                             <div className="login-btn-container">
                                                 <div className="btn">
-
+                                                <Link href="/" underline="none" color="rgb(var(--green-color)">
                                                     Logout
-
+                                                </Link>
                                                 </div>
                                             </div>
                                         </ListItem> :
@@ -178,7 +178,7 @@ function Header() {
                     <span>
                         <div className="login-btn-container">
                             <div className="btn">
-                                {currentUser ? <span onClick={handleLogout}>Logout</span> :
+                                {currentUser ? <span onClick={handleLogout}><Link href="/" underline="none" color="rgb(var(--green-color)">Logout</Link></span> :
                                     <Link href="/login" underline="none" color="rgb(var(--green-color)">
                                         Login
                                     </Link>
