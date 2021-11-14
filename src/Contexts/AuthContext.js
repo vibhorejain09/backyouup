@@ -22,7 +22,7 @@ export function AuthProvider({children}){
                 if(user)
                 {
                     await updateProfile(user, {displayName: name} )
-                    await setDoc(doc(db, "userData", user.uid), {phone: phone, address: address, gender: gender})
+                    await setDoc(doc(db, "userData", user.uid), {name:name, phone: phone, address: address, gender: gender})
                     console.log(user)
                 }
             }
