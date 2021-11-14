@@ -172,7 +172,7 @@ function Header() {
                                 <li >Dashboard</li>
                                 <li ><Link href="/contactus" underline="none" color="rgb(var(--green-color)">Contact Us</Link></li>
 
-                                <span style={{ backgroundColor: "rgb(var(--green-color))", borderRadius: "10px", color: "rgb(var(--home-color))", padding: "0.5rem 0.5rem" }}>{currentUser.displayName ? currentUser.displayName[0] : "B"}</span>
+                                <span style={{ backgroundColor: "rgb(var(--green-color))", borderRadius: "10px", color: "rgb(var(--home-color))", padding: "0.5rem 0.5rem" }}><Link href="/profile" underline="none" color="rgb(var(--green-color)">{currentUser.displayName ? currentUser.displayName[0] : "B"}</Link></span>
                             </> : " "
                     }
                     <span>
