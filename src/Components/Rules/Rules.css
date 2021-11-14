@@ -1,0 +1,53 @@
+#rules {
+    min-height: 100vh;
+    padding-top: 3rem;
+  }
+  .rules-main-container{
+    padding : 1rem;
+    margin : 1rem;
+    display : flex;
+    flex-direction : column;
+    align-items: center;
+    justify-content:center;
+  }
+  .rules-tabgroup-container{
+    margin-bottom:0.5rem;
+  }
+  
+  .rules-component{
+    display:flex;
+    height: 100%;
+    background-color: rgb(var(--home-color));
+  }
+  .rules-information-container{
+    max-width: 800px;
+    width : 100%;
+  }
+  .rules-component-datakey{
+    display : flex;
+    height : 50px;
+    width : 100px;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    padding : 1rem;
+    border : 2.5px solid rgb(var(--green-color));
+  }
+  .rules-component-datakeycontent{
+    border : 2.5px solid rgb(var(--green-color));
+    width : 100%;
+    display:flex;
+    align-items:center;
+    font-weight : bold;
+  }
+  .rules-agree-check{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  #rules-next-pay{
+    position: absolute;
+    bottom: 0.5rem;
+    right: 1rem;
+    cursor: pointer;
+}

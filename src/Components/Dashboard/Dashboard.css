@@ -4,3 +4,9 @@
     justify-content: center;
     padding-top: 3rem;
 }
+#dashboard-next{
+    position: absolute;
+    bottom: 0.5rem;
+    right: 1rem;
+    cursor: pointer;
+}

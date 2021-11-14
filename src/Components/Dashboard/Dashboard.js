@@ -4,6 +4,7 @@ import InputLabel from "@mui/material/InputLabel"
 import MenuItem from "@mui/material/MenuItem"
 import FormControl from "@mui/material/FormControl"
 import Select from "@mui/material/Select"
+import Link from "@mui/material/Link"
 import "./Dashboard.css"
 import {
   Button,
@@ -75,7 +76,7 @@ function Upload() {
             Instructions for Document Uploadation
           </Typography>
           <Typography component="h4" variant="h5" sx={{ pt: 1, textAlign: "center" }} style={{ color: "rgb(var(--green-color))", fontWeight: "300", fontSize: "1rem" }}>
-            1. Documents Required: Aadhar, Previous Sem Marksheet, Prveious Fee Reciept, Passport Size Photo. 
+            1. Documents Required: Aadhar, Previous Sem Marksheet, Prveious Fee Reciept, Passport Size Photo.
           </Typography>
           <Typography component="h4" variant="h5" sx={{ pt: 1, textAlign: "center" }} style={{ color: "rgb(var(--green-color))", fontWeight: "300", fontSize: "1rem" }}>
             2. All the Documnet should be merged in a one PDF and then submitted.
@@ -139,6 +140,11 @@ function Upload() {
           </Box>
         </Box>
       </Box>
+      <div className="btn" id="dashboard-next">
+        <Link href="/rules" underline="none" color="rgb(var(--green-color)">
+          Next
+        </Link>
+      </div>
     </div>
   )
 }

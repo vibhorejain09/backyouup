@@ -59,7 +59,7 @@ function Profile() {
                     My Profile
                 </Typography>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <div>Name :</div>
+                    <div>Name:</div>
                     {editName ? (
                         <input
                         type="text"
@@ -76,7 +76,7 @@ function Profile() {
                     )}
                 </div>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <div>Phone :</div>
+                    <div>Phone:</div>
                     {editPhone ? (
                         <input
                         type="text"
@@ -93,7 +93,7 @@ function Profile() {
                         )}
                 </div>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <div>Address :</div>
+                    <div>Address:</div>
                     {editAddress ? (
                         <input
                         type="text"
@@ -111,11 +111,11 @@ function Profile() {
                         
                 </div>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "center", paddingTop: "1rem"}}>
-                        <div> Email : </div>
+                        <div> Email: </div>
                         <div style={{ paddingLeft: "1rem" }}> {currentUser.email}</div>
                     </div>
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "center" , paddingTop: "1.5rem" }}>
-                        <div> Gender : </div>
+                        <div> Gender: </div>
                         <div style={{ paddingLeft: "1rem" }}> {gender}</div>
                     </div>
             </Box> 
