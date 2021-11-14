@@ -8,6 +8,7 @@ import Team from './Components/Team/Team';
 import Footer from './Components/Footer/Footer';
 import Signup from './Components/Signup/Signup';
 import Login from './Components/Login/Login';
+import Upload from "./Components/Upload/Upload"
 import ForgotPassword from './Components/ForgotPassword/ForgotPassword';
 import VerifyEmail from './Components/VerifyEmail/VerifyEmail';
 import ContactUs from './Components/ContactUs/ContactUs';
@@ -45,6 +46,7 @@ function App() {
             <Route path="/contactus" element={<FreeRoute><ContactUs/></FreeRoute>} />
             <Route path="/profile" element={<FreeRoute><Profile/></FreeRoute>} />
             <Route path="/verifyemail" element={<VerifiedRoute><VerifyEmail/></VerifiedRoute>} />
+            <Route path="/upload" element={<FreeRoute><Upload/></FreeRoute>} />
           </Routes>
           <Footer />
 
