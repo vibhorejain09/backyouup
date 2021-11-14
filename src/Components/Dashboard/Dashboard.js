@@ -1,28 +1,28 @@
-import React, { useEffect } from "react"
+import React, { useState } from "react"
 import Box from "@mui/material/Box"
 import InputLabel from "@mui/material/InputLabel"
 import MenuItem from "@mui/material/MenuItem"
 import FormControl from "@mui/material/FormControl"
 import Select from "@mui/material/Select"
-import "./Upload.css"
+import "./Dashboard.css"
 import {
   Button,
-  CircularProgress,
   OutlinedInput,
   TextField,
+  Typography
 } from "@mui/material"
-import { UploadFile } from "@mui/icons-material"
+import { CloudUpload } from "@mui/icons-material"
 import { db, storage } from "../../Utils/firebase"
 import { ref, uploadBytes } from "@firebase/storage"
 import { nanoid } from "nanoid"
-import { addDoc, collection, doc, getDoc } from "@firebase/firestore"
+import { addDoc, collection } from "@firebase/firestore"
 function Upload() {
-  const [type, setType] = React.useState("")
-  
-  const [title, setTitle] = React.useState("")
-  const [content, setContent] = React.useState("")
-  const [file, setFile] = React.useState()
-  const [uploading, setUploading] = React.useState(false)
+  const [type, setType] = useState("")
+
+  const [title, setTitle] = useState("")
+  const [content, setContent] = useState("")
+  const [file, setFile] = useState()
+  const [uploading, setUploading] = useState(false)
   async function handleSubmit(e) {
     e.preventDefault()
     setUploading(true)
@@ -30,7 +30,7 @@ function Upload() {
     if (type === "pdf") {
       if (file.type !== "application/pdf") {
         setUploading(false)
-        return alert("Please select a pdf file")
+        return alert("Only Pdf File Allowed")
       }
       const storageRef = ref(storage, fileName)
       await uploadBytes(storageRef, file).then(async (snapshot) => {
@@ -44,7 +44,7 @@ function Upload() {
         setUploading(false)
         setType("")
         setContent("")
-        
+
         setFile("")
         setTitle("")
       })
@@ -52,7 +52,6 @@ function Upload() {
     }
     const data = {
       content: content,
-      
       title: title,
       type: type,
     }
@@ -60,17 +59,30 @@ function Upload() {
     setUploading(false)
     setType("")
     setContent("")
-    
     setFile("")
     setTitle("")
   }
 
- 
+
   return (
-    <div id="upload-page">
-      <Box sx={{ maxWidth: 400, width: "100%" }}>
+    <div id="dashboard">
+      <Box sx={{ maxWidth: 850, width: "100%" }}>
         <Box component="form" sx={{ p: 10 }} onSubmit={handleSubmit}>
-          <h1>Upload</h1>
+          <Typography component="h2" variant="h5" sx={{ textAlign: "center" }} style={{ color: "rgb(var(--green-color))", fontWeight: "bold" }}>
+            Upload Your Document Here
+          </Typography>
+          <Typography component="h4" variant="h5" sx={{ pt: 2, textAlign: "center" }} style={{ color: "rgb(var(--blackshade-color))", fontWeight: "300", fontSize: "1.5rem" }}>
+            Instructions for Document Uploadation
+          </Typography>
+          <Typography component="h4" variant="h5" sx={{ pt: 1, textAlign: "center" }} style={{ color: "rgb(var(--green-color))", fontWeight: "300", fontSize: "1rem" }}>
+            1. Documents Required: Aadhar, Previous Sem Marksheet, Prveious Fee Reciept, Passport Size Photo. 
+          </Typography>
+          <Typography component="h4" variant="h5" sx={{ pt: 1, textAlign: "center" }} style={{ color: "rgb(var(--green-color))", fontWeight: "300", fontSize: "1rem" }}>
+            2. All the Documnet should be merged in a one PDF and then submitted.
+          </Typography>
+          <Typography component="h4" variant="h5" sx={{ pt: 2, textAlign: "center" }} style={{ color: "rgb(var(--green-color))", fontWeight: "300", fontSize: "1rem" }}>
+            3. File Name: EnrollmentNumber_Name (ex: 0801CS191101_VibhoreJain).
+          </Typography>
           <Box sx={{ minWidth: 120 }}>
             <FormControl sx={{ my: 2 }} fullWidth>
               <InputLabel id="upload-type-label">Type</InputLabel>
@@ -82,9 +94,6 @@ function Upload() {
                 onChange={(e) => setType(e.target.value)}>
                 <MenuItem value="pdf">PDF</MenuItem>
               </Select>
-            </FormControl>
-            <FormControl sx={{ my: 2 }} fullWidth>
-              
             </FormControl>
             <TextField
               sx={{ my: 2 }}
@@ -111,9 +120,9 @@ function Upload() {
                 sx={{ my: 2 }}
                 required
                 fullWidth
-                id="content"
-                label="Content"
-                name="Content"
+                id="uploadhere"
+                label="Upload Here"
+                name="Uplaod Here"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
               />
@@ -122,10 +131,10 @@ function Upload() {
               type="Submit"
               variant="contained"
               disabled={uploading}
-              fullWidth>
+              fullWidth style={{ backgroundColor: "rgb(var(--green-color))" }}>
               {" "}
-              <UploadFile />
-              {uploading ? "Uploading..." : "Upload"}
+              <CloudUpload />
+              <span>{uploading ? "Uploading..." : "Upload"}</span>
             </Button>
           </Box>
         </Box>

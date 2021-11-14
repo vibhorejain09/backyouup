@@ -12,7 +12,7 @@ import { People, Info, LiveHelp, Home, Menu, Login, Logout, Dashboard as Dashboa
 import scrollToElement from "../../Utils/scrollToElement";
 import { useAuth } from '../../Contexts/AuthContext';
 import { Link } from "@mui/material"
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 function Header() {
     const width = useWindowWidth();
     const [open, setOpen] = useState(false);
@@ -108,8 +108,9 @@ function Header() {
                                                     <ListItemIcon>
                                                         <DashboardIcon />
                                                     </ListItemIcon>
-
-                                                    <ListItemText primary={"Dashboard"} />
+                                                    <Link href="/dashboard" underline="none" color="rgb(var(--blackshade-color)" >
+                                                        <ListItemText primary={"Dashboard"} />
+                                                    </Link>
                                                 </ListItem>
                                             </Link>
                                             <ListItem className="sidebar-link" button component="a" href="#conatctus" key={"ContactUs"}>
@@ -136,9 +137,9 @@ function Header() {
                                             </ListItemIcon>
                                             <div className="login-btn-container">
                                                 <div className="btn">
-                                                <Link href="/" underline="none" color="rgb(var(--green-color)">
-                                                    Logout
-                                                </Link>
+                                                    <Link href="/" underline="none" color="rgb(var(--green-color)">
+                                                        Logout
+                                                    </Link>
                                                 </div>
                                             </div>
                                         </ListItem> :
@@ -161,15 +162,15 @@ function Header() {
                 </React.Fragment>
             ) : (
                 <ul className="header-items">
-                    <li onClick={() => {navigate("/"); scrollToElement("home")}}>Home </li>
-                    <li onClick={() => {navigate("/"); scrollToElement("aboutus")}}> About Us</li>
-                    <li onClick={() => {navigate("/"); scrollToElement("faqs")}}>FAQs</li>
-                    <li onClick={() => {navigate("/"); scrollToElement("team")}}>Team</li>
+                    <li onClick={() => { navigate("/"); scrollToElement("home") }}>Home </li>
+                    <li onClick={() => { navigate("/"); scrollToElement("aboutus") }}> About Us</li>
+                    <li onClick={() => { navigate("/"); scrollToElement("faqs") }}>FAQs</li>
+                    <li onClick={() => { navigate("/"); scrollToElement("team") }}>Team</li>
                     {
                         currentUser ?
 
                             <>
-                                <li >Dashboard</li>
+                                <li ><Link href="/dashboard" underline="none" color="rgb(var(--green-color)">Dashboard</Link></li>
                                 <li ><Link href="/contactus" underline="none" color="rgb(var(--green-color)">Contact Us</Link></li>
 
                                 <span style={{ backgroundColor: "rgb(var(--green-color))", borderRadius: "10px", color: "rgb(var(--home-color))", padding: "0.5rem 0.5rem" }}><Link href="/profile" underline="none" color="rgb(var(--green-color)">{currentUser.displayName ? currentUser.displayName[0] : "B"}</Link></span>

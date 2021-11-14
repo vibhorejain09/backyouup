@@ -64,7 +64,7 @@ function Signup() {
         <div id="signup">
             <Container component="main" maxWidth="xs" sx={{ pt: 12 }}>
                 <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", mb: 2 }}>
-                    <Login />
+                    <Login fontSize="large" />
                 </Box>
                 <Typography component="h2" variant="h5" sx={{ textAlign: "center" }} style={{color: "rgb(var(--green-color))", fontWeight: "bold"}}>
                     Register/Sign Up
@@ -113,7 +113,7 @@ function Signup() {
                     </Button>
                     <Grid container justifyContent="center">
                         <Grid item>
-                            <Link href="/login" underline="none">
+                            <Link href="/login" underline="none" style={{color: "rgb(var(--blackshade-color))"}}>
                                 Already have an account? Sign In.
                             </Link>
                         </Grid>

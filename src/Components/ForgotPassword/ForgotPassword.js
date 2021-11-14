@@ -1,7 +1,7 @@
 import React, {useState, useRef} from 'react'
 import "./ForgotPassword.css"
 import { Container, Box, Grid, TextField, Typography, Button, Link, Alert } from "@mui/material"
-import { Login as LoginIcon } from "@mui/icons-material";
+import { Password } from "@mui/icons-material";
 import { useAuth } from '../../Contexts/AuthContext'
 
 function ForgotPassword() {
@@ -43,7 +43,7 @@ function ForgotPassword() {
             <div id="forgotpassword">
                 <Container component="main" maxWidth="xs">
                     <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", mb: 2 }}>
-                        <LoginIcon />
+                        <Password fontSize="large" />
                     </Box>
                     <Typography component="h2" variant="h5" sx={{ textAlign: "center" }} style={{color: "rgb(var(--green-color))", fontWeight: "bold"}}>
                         Reset Password

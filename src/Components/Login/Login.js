@@ -49,7 +49,7 @@ function Login() {
         <div id="login">
             <Container component="main" maxWidth="xs">
                 <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", mb: 2}}>
-                    <LoginIcon />
+                    <LoginIcon fontSize="large" />
                 </Box>
                 <Typography component="h2" variant="h5" sx={{textAlign: "center"}} style={{color: "rgb(var(--green-color))", fontWeight: "bold"}}>
                     Sign in
@@ -73,12 +73,12 @@ function Login() {
                     </Button>
                     <Grid container justifyContent = "center">
                         <Grid item sx={{mb:2}}>
-                            <Link href="forgotpassword" underline="none">
+                            <Link href="forgotpassword" underline="none" style={{color: "rgb(var(--blackshade-color))"}}>
                                 Forgot Password ?
                             </Link>
                         </Grid>
                         <Grid item>
-                            <Link href="/signup" underline="none">
+                            <Link href="/signup" underline="none" style={{color: "rgb(var(--blackshade-color))"}}>
                                 Don't have an account? Sign Up.
                             </Link>
                         </Grid>  
