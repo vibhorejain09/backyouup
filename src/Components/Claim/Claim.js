@@ -1,11 +1,11 @@
 import React, {useState, useRef} from 'react'
-import './ContactUs.css'
+import './Claim.css'
 import {addDoc, collection} from "@firebase/firestore"
 import { useNavigate } from "react-router-dom"
 import {db} from "../../Utils/firebase"
 import { Container, Box, Grid, TextField, Typography, Button, Alert } from "@mui/material"
-import { ContactMail } from "@mui/icons-material";
-function ContactUs() {
+import { InsertDriveFile } from "@mui/icons-material";
+function Claim() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [msg, setMsg] = useState("");
@@ -23,20 +23,20 @@ function ContactUs() {
             setLoading(false)
             return
         }
-        await addDoc(collection(db, "contactusData"), {email: email, name: name, msg: msg}).then(
+        await addDoc(collection(db, "claimantData"), {email: email, name: name, msg: msg}).then(
              navigate("/")   
         ).catch(
             () => {setMessage("Something went wrong.."); setSeverity("error")}
         )
     }
     return (
-        <div id="contactus">
+        <div id="claim">
             <Container component="main" maxWidth="xs">
                 <Box  sx={{ display: "flex", flexDirection: "column", alignItems: "center", mb: 2 }}>
-                    <ContactMail fontSize="large" />
+                    <InsertDriveFile fontSize="large" />
                 </Box>
                 <Typography component="h2" variant="h5" sx={{ textAlign: "center" }} style={{ color: "rgb(var(--green-color))", fontWeight: "bold" }}>
-                    Contact Us
+                    Claim Policy
                 </Typography>
                 {message ? <Alert severity={severity}>{message}</Alert> :""}
                 <Box ref={formRef} onSubmit={handleSubmit} component="form"  noValidate sx={{ mt: 4 }}>
@@ -49,7 +49,7 @@ function ContactUs() {
                             <TextField  onChange={e => setEmail(e.target.value)} required fullWidth id="email" label="Email Address" name="email" autoComplete="email"  value={email}/>
                         </Grid>
                         <Grid item xs={12} >
-                            <TextField  onChange={e => setMsg(e.target.value)} required multiline fullWidth id="msg" label="Message" name="msg" value={msg}/>
+                            <TextField  onChange={e => setMsg(e.target.value)} required multiline fullWidth id="msg" label="Write Reason of Claim in 150-200 words" name="msg" value={msg}/>
                         </Grid>
 
                     </Grid>
@@ -62,4 +62,4 @@ function ContactUs() {
     )
 }
 
-export default ContactUs
+export default Claim

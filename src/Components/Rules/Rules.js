@@ -23,8 +23,9 @@ function Rules() {
     const [checked, setChecked] = useState(true);
     const handleChange = (event) => {
         setChecked(event.target.checked);
-      };
+    };
     
+
     return (
         <div id="rules">
 
@@ -79,15 +80,18 @@ function Rules() {
                 <FormGroup>
                     <FormControlLabel control={<Checkbox {...label} color="success" />} label="I have read all information carefully and accept all the terms and conditions. " />
                 </FormGroup>
+                <span>
+                    {
+                        <Checkbox checked={checked} onChange={handleChange} /> ?
+                            <div className="btn" id="rules-next-pay">
+                                <Link underline="none" color="rgb(var(--green-color)">
+                                    Pay
+                                </Link>
+                            </div> : " "
+                    }
+                </span>
             </div>
-            {
-                <Checkbox checked={checked} onChange={handleChange} /> ?
-                    <div className="btn" id="rules-next-pay">
-                        <Link underline="none" color="rgb(var(--green-color)">
-                            Next
-                        </Link>
-                    </div> : " "
-            }
+
         </div>
 
     )

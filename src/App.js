@@ -13,6 +13,7 @@ import Rules from "./Components/Rules/Rules"
 import ForgotPassword from './Components/ForgotPassword/ForgotPassword';
 import VerifyEmail from './Components/VerifyEmail/VerifyEmail';
 import ContactUs from './Components/ContactUs/ContactUs';
+import Claim from './Components/Claim/Claim';
 import Profile from './Components/Profile/Profile';
 import { AuthProvider } from "./Contexts/AuthContext"
 import VerifiedRoute from "./Utils/VerifiedRoute"
@@ -45,6 +46,7 @@ function App() {
             <Route path="/login" element={<FreeRoute><Login/></FreeRoute>} />
             <Route path="/forgotpassword" element={<FreeRoute><ForgotPassword/></FreeRoute>} />
             <Route path="/contactus" element={<FreeRoute><ContactUs/></FreeRoute>} />
+            <Route path="/claim" element={<FreeRoute><Claim/></FreeRoute>} />
             <Route path="/profile" element={<FreeRoute><Profile/></FreeRoute>} />
             <Route path="/dashboard" element={<FreeRoute><Dashboard/></FreeRoute>} />
             <Route path="/rules" element={<FreeRoute><Rules/></FreeRoute>} />

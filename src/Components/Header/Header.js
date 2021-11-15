@@ -8,7 +8,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import { People, Info, LiveHelp, Home, Menu, Login, Logout, Dashboard as DashboardIcon, ContactMail, AccountCircle } from "@mui/icons-material";
+import { People, Info, LiveHelp, Home, Menu, Login, Logout, Dashboard as DashboardIcon, ContactMail, AccountCircle, InsertDriveFile } from "@mui/icons-material";
 import scrollToElement from "../../Utils/scrollToElement";
 import { useAuth } from '../../Contexts/AuthContext';
 import { Link } from "@mui/material"
@@ -45,7 +45,7 @@ function Header() {
             <div className="header-logo">
                 <img src={headerlogo} height="50px" alt="backyouup" className="header-logo-byu" />
             </div>
-            {width < 800 ? (
+            {width < 980 ? (
                 <React.Fragment key={"left"}>
                     <Button onClick={toggleDrawer}><Menu fontSize="large" /></Button>
                     <Drawer anchor="left" open={open} onClose={toggleDrawer} >
@@ -121,6 +121,14 @@ function Header() {
                                                     <ListItemText primary={"Contact Us"} />
                                                 </Link>
                                             </ListItem>
+                                            <ListItem className="sidebar-link" button component="a" href="#claim" key={"Claim"}>
+                                                <ListItemIcon>
+                                                    <InsertDriveFile />
+                                                </ListItemIcon>
+                                                <Link href="/claim" underline="none" color="rgb(var(--blackshade-color)" >
+                                                    <ListItemText primary={"Claim"} />
+                                                </Link>
+                                            </ListItem>
                                             <ListItem className="sidebar-link" button component="a" href="#profile" key={"profile"}>
                                                 <ListItemIcon>
                                                     <AccountCircle />
@@ -172,6 +180,7 @@ function Header() {
                             <>
                                 <li ><Link href="/dashboard" underline="none" color="rgb(var(--green-color)">Dashboard</Link></li>
                                 <li ><Link href="/contactus" underline="none" color="rgb(var(--green-color)">Contact Us</Link></li>
+                                <li ><Link href="/claim" underline="none" color="rgb(var(--green-color)">Claim</Link></li>
 
                                 <span style={{ backgroundColor: "rgb(var(--green-color))", borderRadius: "10px", color: "rgb(var(--home-color))", padding: "0.5rem 0.5rem" }}><Link href="/profile" underline="none" color="rgb(var(--green-color)">{currentUser.displayName ? currentUser.displayName[0] : "B"}</Link></span>
                             </> : " "
