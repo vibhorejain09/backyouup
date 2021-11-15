@@ -84,7 +84,7 @@ function Rules() {
                     {
                         <Checkbox checked={checked} onChange={handleChange} /> ?
                             <div className="btn" id="rules-next-pay">
-                                <Link underline="none" color="rgb(var(--green-color)">
+                                <Link href="https://rzp.io/i/neHzGIHBN" underline="none" color="rgb(var(--green-color)">
                                     Pay
                                 </Link>
                             </div> : " "
