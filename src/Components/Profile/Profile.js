@@ -70,7 +70,7 @@ function Profile() {
                             <div style={{padding: "1rem"}}>{name}</div>
                             )}
                     {editName ? (
-                        <div onClick={handleNameUpdate}><span className="btn">Update</span></div>
+                        <div onClick={handleNameUpdate} style={{padding:"0.2rem"}}><span className="btn">Update</span></div>
                     ) : (
                         <div onClick={() => setEditName(true)}><span className="btn">Edit</span></div>
                     )}
@@ -87,13 +87,13 @@ function Profile() {
                         <div style={{padding: "1rem"}} >{phone}</div>
                     )}
                     {editPhone ? (
-                        <div onClick={handlePhoneUpdate}><span className="btn">Update</span></div>
+                        <div onClick={handlePhoneUpdate} style={{padding:"0.2rem"}}><span className="btn">Update</span></div>
                     ) : (
                         <div onClick={() => setEditPhone(true)}><span className="btn">Edit</span></div>
                         )}
                 </div>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <div>Address:</div>
+                    <div>Add:</div>
                     {editAddress ? (
                         <input
                         type="text"
@@ -104,7 +104,7 @@ function Profile() {
                             <div style={{padding: "1rem"}}>{address}</div>
                             )}
                     {editAddress ? (
-                        <div onClick={handleAddressUpdate} style={{padding:"1rem"}}><span className="btn" >Update</span></div>
+                        <div onClick={handleAddressUpdate} style={{padding:"0.2rem"}}><span className="btn" >Update</span></div>
                         ) : (
                             <div onClick={() => setEditAddress(true)}><span className="btn">Edit</span></div>
                             )}
