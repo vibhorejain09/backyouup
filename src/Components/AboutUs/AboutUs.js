@@ -9,13 +9,9 @@ function AboutUs() {
             <div className="aboutus-content">
                 <div className="aboutus-para">
                     <p style={{ maxWidth: "700px", lineHeight: "25px" }}>
-                        Rutters Plate Fleet boom chandler Brethren of the Coast handsomely lookout marooned brigantine knave.
-                        Buccaneer gangway jack rum loot spyglass line Jack Tar fore gaff. Gaff topmast scuttle ballast swab
-                        draught measured fer yer chains dance the hempen jig Chain Shot yardarm. Man braid celiac synth freegan
-                        readymade, pitchfork fam salvia waistcoat lomo bitters gentrify four loko. Pitchfork semiotics
-                        post-ironic vegan. microdosing hashtag semiotics venmo. Flexitarian vape tilde taiyaki.
-                        Prism poutine farm-to-table, messenger bag vegan taxidermy tattooed sartorial squid jean shorts fixie
-                        selvage trust fund vape.
+                    BackYouUp is designed exclusively for the students of SGSITS, keeping in mind how important it is for a person to complete his/her graduation. Being a part of 
+                    BackyouUp, you get the benefit of taking your graduation forward without anything letting you to stop it at any condition, So that you actually shape yourself to 
+                    stand on your own in the job market. Trust us we do have a very smooth service with claim process.
                     </p>
                 </div>
             </div>
