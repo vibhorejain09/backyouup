@@ -9,7 +9,7 @@ function RulesComponent(props) {
                 <span style={{ fontWeight: "bold" }}>{props.dataKey}</span>
             </div>
             <div className="rules-component-datakeycontent">
-                <span style={{ marginLeft: "1rem" }}>
+                <span style={{ marginLeft: "0.5rem" }}>
                     {props.dataKeyContent}
                 </span>
             </div>

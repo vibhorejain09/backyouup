@@ -1,35 +1,35 @@
 const faqsarr = [
     {
-        ques : "Lorem Ipsum is simply dummy text of the printing and typesetting ? ",
-        ans: "Lorem Ipsum has been the industry's standard dummy text ever the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "
+        ques : "How is BackYouUp different from general term insurance.",
+        ans: "Minimum renewal amount and hassle free benefit."
     },
     {
-        ques : "Lorem Ipsum is simply dummy text of the printing typesetting industry? ",
-        ans: "Lorem Ipsum has been the industry's standard text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "
+        ques : "Is BackyouUp affordable? ",
+        ans: "Yes, the policy renewal amount is just 500 INR."
     },
     {
-        ques : "Lorem Ipsum is simply dummy text of  printing and typesetting industry? ",
-        ans: "Lorem Ipsum has been the industry's standard dummy  ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "
+        ques : "Who can apply?",
+        ans: "Any student irrespective of the year and branch can apply. Just he/she has to be a student of sgsits."
     },
     {
-        ques : "Lorem Ipsum is simply dummy text  the printing and typesetting industry? ",
-        ans: "Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "
+        ques : "Are there any hidden terms and conditions?",
+        ans: "No, just have a look at out terms and conditions section."
     },
     {
-        ques : "Lorem Ipsum  simply dummy text of the printing and typesetting industry? ",
-        ans: "Lorem Ipsum  been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "
+        ques : "Is the amount refundable?",
+        ans: "No the complete amount is not refundable but a partial amount is."
     },
     {
-        ques : "Lorem is simply dummy text of the printing and typesetting industry? ",
-        ans: "Lorem Ipsum has been the standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "
+        ques : "Is there any other benefits?",
+        ans: "BackYouUp enables you to study to the fullest without worrying about anything else.We do conduct orientation sessions for parents and new commers."
     },
     {
-        ques : "Lorem Ipsum is text of the printing and typesetting industry? ",
-        ans: "Lorem Ipsum has been the industry's standard dummy text ever since the, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "
+        ques : "How will the amount be reimbursed?",
+        ans: "The amount will be directly submitted to the college(No third party involved)."
     },
     {
-        ques : "Lor Ipsum is simply dummy text of the printing and typesetting industry? ",
-        ans: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an  printer took a galley of type and scrambled it to make a type specimen book. "
+        ques : "Will the complete fees be refunded?",
+        ans: " Yes you will get your complete fees paid by us direclty to the college."
     }
 ]
 
