@@ -79,7 +79,7 @@ function Upload() {
             1. Documents Required: Aadhar, Previous Sem Marksheet, Prveious Fee Reciept, Passport Size Photo.
           </Typography>
           <Typography component="h4" variant="h5" sx={{ pt: 1, textAlign: "center" }} style={{ color: "rgb(var(--green-color))", fontWeight: "300", fontSize: "1rem" }}>
-            2. All the Documnet should be merged in a one PDF and then submitted.
+            2. All the Document should be merged in a one PDF and then submitted.
           </Typography>
           <Typography component="h4" variant="h5" sx={{ pt: 2, textAlign: "center" }} style={{ color: "rgb(var(--green-color))", fontWeight: "300", fontSize: "1rem" }}>
             3. File Name: EnrollmentNumber_Name (ex: 0801CS191101_VibhoreJain).
