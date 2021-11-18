@@ -39,7 +39,7 @@ function Signup() {
                 phone,
                 address,
                 gender,
-            ).then(() => navigate("/"))
+            ).then(() => navigate("/verifyemail"))
         } catch (e) {
             if (e.code === "auth/weak-password") {
                 setMessage("The password is too weak.")
